@@ -44,6 +44,9 @@ Run the following commands to build vuejs app.
     $ yarn
     $ npm run build
 ```
+#### Update api endpoint URL
+    ROOT/vue-pwa/src/plugins/axios.js
+    line 9: baseURL
 ### Migrations
 Run the following command to run startup migrations.
 

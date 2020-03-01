@@ -6,7 +6,7 @@ import { getLocale, apiNotify } from './helpers'
 import router from '@/router'
 
 export const axios = _axios.create({
-  baseURL: 'https://shop.khare.co.in/api', // process.env.API_URL,
+  baseURL: 'https://blog.khare.co.in/api', // process.env.API_URL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'Token'
