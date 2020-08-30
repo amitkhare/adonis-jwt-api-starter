@@ -11,7 +11,7 @@ This is the boilerplate for creating an API server in AdonisJs, it comes pre-con
 	-    verify email,
 	-    forgot password,
 	-    resend email verification,
-	-   refresh token,
+	-    refresh token,
 	-    me (current user info except password),
 	-    my tokens (current user's auth tokens)
 3. CORS
