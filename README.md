@@ -37,26 +37,41 @@ or manually clone the repo and then run `npm install`.
 > Feel free to change `ROOT/.env` PORT, APP_* or any other variable according to your needs.
 
 
+### Install dependencies
+
+```js
+cd <root-of-your-project>
+npm install
+```
+
 ### VueJS
 Run the following commands to build vuejs app.
 ```bash
-    $ cd vue-pwa
+    $ cd <root-of-your-project>/vue-pwa
     $ yarn
     $ npm run build
 ```
 #### Update api endpoint URL
     ROOT/vue-pwa/src/plugins/axios.js
     line 9: baseURL
+    
 ### Migrations
 Run the following command to run startup migrations.
 
 ```js
-adonis migration:run
+    $ cd <root-of-your-project>
+    $ adonis migration:run
 ```
 
 ### Run
 ```js
-adonis serve --dev
+    $ cd <root-of-your-project>
+    $ adonis serve --dev
+```
+or
+```js
+    $ cd <root-of-your-project>
+    $ npm server.js
 ```
 
 # AUTH API Endpoints
