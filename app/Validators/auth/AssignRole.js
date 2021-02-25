@@ -31,7 +31,7 @@ class AssignRole {
   
   async fails (errors) {
     return this.ctx.response.status(400).json({ 
-        message: "Shoot! Something is wrong with your request.",
+        message: this.ctx.request.parrot.formatMessage('http.request.malformed'),
         errors: errors
     })
   }

@@ -3,7 +3,6 @@
 
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
 
-0. VueJS
 1. Bodyparser
 2. Authentication
 	-    authorise,
@@ -17,6 +16,7 @@ This is the boilerplate for creating an API server in AdonisJs, it comes pre-con
 3. CORS
 4. Lucid ORM
 5. Migrations and seeds
+5. Translations
 
 ## Setup
 
@@ -37,41 +37,16 @@ or manually clone the repo and then run `npm install`.
 > Feel free to change `ROOT/.env` PORT, APP_* or any other variable according to your needs.
 
 
-### Install dependencies
-
-```js
-cd <root-of-your-project>
-npm install
-```
-
-### VueJS
-Run the following commands to build vuejs app.
-```bash
-    $ cd <root-of-your-project>/vue-pwa
-    $ yarn
-    $ npm run build
-```
-#### Update api endpoint URL
-    ROOT/vue-pwa/src/plugins/axios.js
-    line 9: baseURL
-    
 ### Migrations
 Run the following command to run startup migrations.
 
 ```js
-    $ cd <root-of-your-project>
-    $ adonis migration:run
+adonis migration:run
 ```
 
 ### Run
 ```js
-    $ cd <root-of-your-project>
-    $ adonis serve --dev
-```
-or
-```js
-    $ cd <root-of-your-project>
-    $ npm server.js
+adonis serve --dev
 ```
 
 # AUTH API Endpoints
@@ -150,6 +125,7 @@ or
 - [x] List Users
 - [x] Remove User
 - [x] Toggle User Ban
+- [x] Translations
 
 ## PROFILE endpoint
 - [x] Profile

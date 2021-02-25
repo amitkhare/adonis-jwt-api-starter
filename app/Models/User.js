@@ -23,7 +23,7 @@ class User extends Model {
   }
   // roles
   static get roles () {
-    return ['superadmin', 'admin', 'manager', 'moderator', 'member']
+    return ['superadmin', 'admin', 'manager', 'moderator', 'teacher', 'parent', 'student', 'member']
   }
 
   // hide fields

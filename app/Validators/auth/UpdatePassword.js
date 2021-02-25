@@ -4,8 +4,8 @@ class UpdatePassword {
 
   get rules () {
     return {
-      email: 'required|email',
-      password: 'required'
+      password: 'required',
+      password_new: 'required|min:6'
     }
   }
 
@@ -19,21 +19,20 @@ class UpdatePassword {
   
   get data () {
     const requestBody = this.ctx.request.all()
-    requestBody.email = (requestBody.email) ? requestBody.email.trim().toLowerCase() : null
     return requestBody
   }
   
   get messages () {
     return {
-      'email.required': 'Email address can\'t be empty.',
-      'email.email': 'Email address is not valid',
-      'password.required': 'Password Required'
+      'password.required': 'Password Required',
+      'password_new.required': 'Password Required',
+      'password_new.min': 'Password needs to be at least 6 characters long.'
     }
   }
   
   async fails (errors) {
     return this.ctx.response.status(400).json({ 
-        message: "Shoot! Something is wrong with your request.",
+        message: this.ctx.request.parrot.formatMessage('http.request.malformed'),
         errors: errors
     })
   }

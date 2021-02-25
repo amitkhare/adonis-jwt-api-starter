@@ -2,12 +2,14 @@
 
 const uuid = use('uuid/v1')
 const Mail = use('Mail')
+const Env = use('Env')
 const fs = use('fs')
 const Helpers = use('Helpers')
 const avatarDir = Helpers.publicPath('images/avatars/') + '/'
 const logger = use('App/Helpers/Logger')
 const Profile = use('App/Models/Profile')
 const cloudinary = use ('cloudinary')
+
 
 class ProfileController {
   
@@ -20,7 +22,7 @@ class ProfileController {
     })
     
     if (!avatar || !avatar.tmpPath || !avatar.clientName) {
-      return response.status(400).json({ message: "Please choose a file to upload." })
+      return response.status(400).json({ message: request.parrot.formatMessage('profile.choose.file.to.upload') })
     }
     
     const public_id = 'avatar-' + user.id
@@ -65,14 +67,14 @@ class ProfileController {
     })
     
     if (!avatar || !avatar.tmpPath || !avatar.clientName) {
-      return response.status(400).json({ message: "Please choose a file to upload." })
+      return response.status(400).json({ message: request.parrot.formatMessage('profile.upload.file.missing') })
     }
     
     const fileName = 'avatar-' + user.id + '.' + avatar.subtype
     if(fs.existsSync(avatarDir + fileName)){
       fs.unlink(avatarDir + fileName, (err) => {
         if (err) {
-          return response.status(500).json({ message: "Could not delete existing file.", errors: err })
+          return response.status(500).json({ message: request.parrot.formatMessage('profile.file.delete.failed'), errors: err })
         }
       })
     }
@@ -95,14 +97,14 @@ class ProfileController {
     profile = await user.profile().fetch()
     await logger('info','Avatar Updated', user.id, null, user.email)
     
-    return response.status(200).json({ message: "Avatar updated.", url: profile.avatar, userId: user.id })
+    return response.status(200).json({ message: request.parrot.formatMessage('profile.avatar.updated'), url: profile.avatar, userId: user.id })
   }
   
   async me({ request, response, auth }) {
     const user = await auth.getUser()
     const profile = await user.profile().first()
     if(!profile) {
-      return response.status(404).json({ message: 'User doen\'t have any profile.' })
+      return response.status(404).json({ message: request.parrot.formatMessage('profile.user.profile.not.found') })
     }
     return response.status(200).json({ ...user.toJSON(), profile})
   }
@@ -113,7 +115,7 @@ class ProfileController {
     const profile = await user.profile().first()
     
     if(!profile) {
-      return response.status(404).json({ message: 'User doen\'t have any profile.' })
+      return response.status(404).json({ message: request.parrot.formatMessage('profile.user.profile.not.found') })
     }
     
     profile.first_name = first_name
@@ -121,7 +123,7 @@ class ProfileController {
     await profile.save()
     await logger('info','Profile Updated', user.id, null, profile)
     
-    return response.status(200).json({ message: 'Profile updated' })
+    return response.status(200).json({ message: request.parrot.formatMessage('profile.profile.updated') })
     
   }
 }

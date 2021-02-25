@@ -18,6 +18,7 @@
   "private": true,
   "dependencies": {
     "@adonisjs/ace": "^5.0.1",
+    "@adonisjs/antl": "^2.0.7",
     "@adonisjs/auth": "^3.0.4",
     "@adonisjs/bodyparser": "^2.0.2",
     "@adonisjs/cors": "^1.0.5",
@@ -27,13 +28,14 @@
     "@adonisjs/lucid": "^5.0.3",
     "@adonisjs/mail": "^3.0.5",
     "@adonisjs/validator": "^5.0.3",
+    "@sendgrid/mail": "^6.5.5",
     "axios": "^0.18.1",
     "cloudinary": "^1.11.0",
+    "dotenv": "^5.0.1",
     "gravatar": "^1.6.0",
     "mysql": "^2.15.0",
     "sqlite3": "^4.0.0"
   },
-  "devDependencies": {},
   "autoload": {
     "App": "./app"
   }

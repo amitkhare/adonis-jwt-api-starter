@@ -1,0 +1,4 @@
+{
+  "resource.not.found": "Resource not found.",
+  "request.malformed" : "Bad Request, Please check data provided by you."
+}

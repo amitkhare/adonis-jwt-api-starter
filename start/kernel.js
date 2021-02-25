@@ -12,7 +12,8 @@ const Server = use('Server')
 |
 */
 const globalMiddleware = [
-  'Adonis/Middleware/BodyParser'
+  'Adonis/Middleware/BodyParser',
+  'App/Middleware/LocaleDitector'
 ]
 
 /*
@@ -37,6 +38,9 @@ const namedMiddleware = {
   jwtAuth: 'App/Middleware/JwtAuth',
   jwtAuthVerified: 'App/Middleware/JwtAuthVerified',
   jwtAuthMember: 'App/Middleware/JwtAuthMember',
+  jwtAuthStudent: 'App/Middleware/JwtAuthStudent',
+  jwtAuthParent: 'App/Middleware/JwtAuthParent',
+  jwtAuthTeacher: 'App/Middleware/JwtAuthTeacher',
   jwtAuthModerator: 'App/Middleware/JwtAuthModerator',
   jwtAuthManager: 'App/Middleware/JwtAuthManager',
   jwtAuthAdmin: 'App/Middleware/JwtAuthAdmin',

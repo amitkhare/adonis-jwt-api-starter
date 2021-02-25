@@ -4,7 +4,6 @@ class Authorise {
 
   get rules () {
     return {
-      email: 'required|email',
       password: 'required'
     }
   }
@@ -26,15 +25,13 @@ class Authorise {
   
   get messages () {
     return {
-      'email.required': 'Email address can\'t be empty.',
-      'email.email': 'Email address is not valid',
       'password.required': 'Password Required'
     }
   }
   
   async fails (errors) {
     return this.ctx.response.status(400).json({ 
-        message: "Shoot! Something is wrong with your request.",
+        message: this.ctx.request.parrot.formatMessage('http.request.malformed'),
         errors: errors
     })
   }

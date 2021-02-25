@@ -1,0 +1,8 @@
+{
+  "upload.file.missing"       : "Please choose a file to upload.",
+  "file.delete.failed"        : "Could not delete existing file.",
+  "avatar.updated"            : "Avatar updated.",
+  "user.profile.not.found"    : "User does not have any profile.",
+  "profile.updated"           : "Profile updated",
+  "choose.file.to.upload"     : "Please choose a file to upload."
+}
