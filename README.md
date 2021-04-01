@@ -23,7 +23,7 @@ This is the boilerplate for creating an API server in AdonisJs, it comes pre-con
 Use the adonis command to install the blueprint
 
 ```bash
-adonis new starter --blueprint=amitkhare/adonis-api-starter
+adonis new starter --blueprint=amitkhare/adonis-jwt-api-starter
 ```
 
 or manually clone the repo and then run `npm install`.
