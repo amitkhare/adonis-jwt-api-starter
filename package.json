@@ -26,7 +26,7 @@
     "@adonisjs/framework": "^5.0.5",
     "@adonisjs/ignitor": "^2.0.6",
     "@adonisjs/lucid": "^18.3.0",
-    "@adonisjs/mail": "^3.0.5",
+    "@adonisjs/mail": "^8.1.2",
     "@adonisjs/validator": "^5.0.3",
     "@sendgrid/mail": "^6.5.5",
     "axios": "^0.18.1",
